@@ -1,0 +1,36 @@
+---
+title: "Chapter 6: Modeling Random Events"
+subtitle: "COR 142 C"
+author: "Dr. Kao"
+format: 
+  html:
+    toc: true
+    toc-location: right
+    embed-resources: true
+    css: styles.css
+    lightbox: true
+---
+
+```{r}
+#| include: false
+
+library(dplyr)
+
+library(ggplot2)
+
+library(janitor)
+
+library(palmerpenguins)
+
+library(plotly)
+
+library(crosstalk)
+
+library(shiny)
+
+library(bslib)
+
+library(DT)
+
+library(scales)
+```

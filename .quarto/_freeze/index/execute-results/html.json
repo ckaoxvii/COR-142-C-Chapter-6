@@ -1,0 +1,15 @@
+{
+  "hash": "b0f03522df17ed04d2d574a65112bc83",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Chapter 6: Modeling Random Events\"\nsubtitle: \"COR 142 C\"\nauthor: \"Dr. Kao\"\nformat: \n  html:\n    toc: true\n    toc-location: right\n    embed-resources: true\n    css: styles.css\n    lightbox: true\n---\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
