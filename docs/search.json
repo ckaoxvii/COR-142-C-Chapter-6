@@ -19,5 +19,12 @@
     "title": "Chapter 6: Modeling Random Events",
     "section": "",
     "text": "NoteProbability Distribution (PDF)\n\n\n\nA probability distribution is a tool, in the form of a table or a graph, that tells us\n\nAll possible outcomes of a random experiment.\nThe probability of each outcome.\n\n\n\n\n\n\n\n\n\nNoteFeatures of a Probability Distribution\n\n\n\n\nAll \\(P(X)\\) must be between 0 and 1.\nThe sum of all \\(P(X)\\) values must equal 1.\n\n\n\n\n\n\n\n\n\nNoteDiscrete and Continuous Variables\n\n\n\n\nDiscrete variable: Numerical values that you can list or count.\nContinuous variable: Numerical values that cannot be listed or counted because they occur over a continuous range of values.\n\n\n\n\n\n\n\n\n\nTipExample 6.1.1.\n\n\n\n\nQuestionAnswer\n\n\nDetermine the variable type.\n\nNumber of siblings you have\nHeight of basketball players\nNumber of cars owned by a household\nNumber of pets owned by a student\nTemperature of St. Augustine on January 1st, 2000\nWait time in a doctor’s office\n\n\n\na. Discrete b. Continuous c. Discrete d. Discrete e. Continuous f. Continuous\n\n\n\n\n\n\n\n\n\n\n\nNoteDiscrete Variables\n\n\n\nSince the values of a discrete variable cannot be listed, a probability distribution using a table (or spike graph) is more useful for a discrete variable.\n\n\n\n\n\n\n\n\nNoteContinuous Variables\n\n\n\nThe graph of a continuous probability distribution is called a density curve or probability density function* (pdf). These graphs have an area under the curve that must equal to 1. Therefore, the area under the curve represents the probability."
+  },
+  {
+    "objectID": "index.html#section-6.1-examples",
+    "href": "index.html#section-6.1-examples",
+    "title": "Chapter 6: Modeling Random Events",
+    "section": "Section 6.1 Examples",
+    "text": "Section 6.1 Examples\n\n\n\n\n\n\nTipExample 1\n\n\n\n\nQuestionAnswer\n\n\nConsider the random variable \\(X\\) where \\(X =\\) number of stars given by a randomly selected book reviewer. The probability distribution of the number of stars is shown below. Estimate the probability that a randomly selected reviewer gave a given book a three-star rating."
   }
 ]
