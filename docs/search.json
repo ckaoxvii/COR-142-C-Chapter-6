@@ -25,6 +25,6 @@
     "href": "index.html#section-6.1-examples",
     "title": "Chapter 6: Modeling Random Events",
     "section": "Section 6.1 Examples",
-    "text": "Section 6.1 Examples\n\n\n\n\n\n\nTipExample 1\n\n\n\n\nQuestionAnswer\n\n\nConsider the random variable \\(X\\) where \\(X =\\) number of stars given by a randomly selected book reviewer. The probability distribution of the number of stars is shown below. Estimate the probability that a randomly selected reviewer gave a given book a three-star rating."
+    "text": "Section 6.1 Examples\n\n\n\n\n\n\nTipExample 1\n\n\n\n\nQuestionAnswer\n\n\nConsider the random variable \\(X\\) where \\(X =\\) number of stars given by a randomly selected book reviewer. The probability distribution of the number of stars is shown below. Estimate the probability that a randomly selected reviewer gave a given book a three-star rating.\n\n\n\n\n\n\n\n\n\n\n\nThe probability value for three-star rating is 0.11."
   }
 ]
