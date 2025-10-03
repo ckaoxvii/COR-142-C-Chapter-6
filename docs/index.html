@@ -4286,7 +4286,7 @@ window.Quarto = {
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <p><span style="color:red">a. There are 4 distinct outcomes you can get from flipping 2 coins. <span class="math display">\[
   \{ HH, HT, TH, HH \}
-\]</span></span> <span style="color:red">b. The coin tosses are independent of each other, because the outcome of a toss does not depend on the outcome of the previous toss.</span> <span style="color:red">c. We need to first calculate the following probabilities. Assuming that the coin tosses are independent events. Then</span> <span style="color:red"><span class="math display">\[
+\]</span></span> <span style="color:red">b. The coin tosses are independent of each other, because the outcome of a toss does not depend on the outcome of the previous toss.</span><br> <span style="color:red">c. We need to first calculate the following probabilities. Assuming that the coin tosses are independent events. Then</span> <span style="color:red"><span class="math display">\[
 \begin{align}
   P(HH) &amp;= P(H) \cdot P(H) = 0.8 \cdot 0.8 = 0.64\\
   P(HT) &amp;= P(H) \cdot P(T) = 0.8 \cdot 0.2 = 0.16\\
@@ -4295,6 +4295,20 @@ window.Quarto = {
 \end{align}
 \]</span></span> <span style="color:red">Finally, adding these probability together, we have <span class="math display">\[
   P(HH) + P(HT) + P(TH) + P(TT) = 0.64 + 0.16 + 0.16 + 0.04 = 1
+\]</span></span><br> <span style="color:red">d. First observe that <span class="math display">\[
+\begin{align}
+  X &amp;= \text{event with 0 heads} = \{ TT \}\\,
+  X &amp;= \text{event with 1 heads} = \{ HT, TH \},\\
+  X &amp;= \text{event with 2 heads} = \{ HH \}
+\end{align}
+\]</span></span> <span style="color:red">Therefore <span class="math display">\[
+\begin{align}
+  P(X = 0) = 0.04,\\
+  P(X = 1) = P(HT) + P(TH) = 0.16 + 0.16 = 0.32,\\
+  P(X = 2) = P(HH) = 0.64
+\end{align}
+\]</span></span> <span style="color:red">And the sum is</span> <span style="color:red"><span class="math display">\[
+  P(X = 0) + P(X = 1) + P(X = 2) = 0.04 + 0.32 + 0.64 = 1.
 \]</span></span></p>
 </div>
 </div>
