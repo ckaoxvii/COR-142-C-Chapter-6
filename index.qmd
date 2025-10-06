@@ -240,6 +240,7 @@ c. Based on the plot, approximately what is the probability that someone will wa
 ```{r}
 #| echo: false
 #| message: false
+#| warning: false
 
 alpha <- 2.5
 beta <- 3.5
