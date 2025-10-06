@@ -34,3 +34,392 @@ library(DT)
 
 library(scales)
 ```
+
+## Probability Distributions
+
+::: {.callout-note appearance="default" icon="false"}
+# Probability Distribution (PDF)
+
+A probability distribution is a tool, in the form of a table or a graph, that tells us
+
+1. [**All possible outcomes of a random experiment.**]{style='color:red'}
+2. [**The probability of each outcome.**]{style='color:red'}
+:::
+
+::: {.callout-note appearance="default" icon='false'}
+# Features of a Probability Distribution
+
+1. All $P(X)$ must be between [**0**]{style='color:red'} and [**1**]{style='color:red'}.
+2. The sum of all $P(X)$ values must equal [**1**]{style='color:red'}.
+:::
+
+::: {.callout-note appearance='default' icon='false'}
+# Discrete and Continuous Variables
+
+* [**Discrete variable**]{style='color:red'}: Numerical values that you can [**list**]{style='color:red'} or [**count**]{style='color:red'}.
+* [**Continuous variable**]{style='color:red'}: Numerical values that cannot be [**listed or counted**]{style='color:red'} because they occur over a continuous range of values.
+:::
+
+::: {.callout-tip appearance="default" icon='false'}
+# Example 6.1.1.
+
+:::: {.panel-tabset}
+# Question
+
+Determine the variable type.
+
+a. Number of siblings you have
+b. Height of basketball players
+c. Number of cars owned by a household
+d. Number of pets owned by a student
+e. Temperature of St. Augustine on January 1st, 2000
+f. Wait time in a doctor's office
+
+# Answer
+[a. Discrete<br>
+ b. Continuous<br>
+ c. Discrete<br>
+ d. Discrete<br>
+ e. Continuous<br>
+ f. Continuous
+]{style='color:red'}
+::::
+:::
+
+::: {.callout-note appearance="default" icon='false'}
+# Discrete Variables
+
+Since the values of a [**discrete**]{style='color:red'} variable cannot be listed, a probability distribution using a table (or spike graph) is more useful for a [**discrete**]{style='color:red'} variable.
+:::
+
+::: {.callout-note appearance="default" icon='false'}
+# Continuous Variables
+
+The graph of a continuous probability distribution is called a **density curve** or **probability density function*** (**pdf**). These graphs have an [**area**]{style='color:red'} under the curve that must equal to 1. Therefore, **the area under the curve represents the probability.**
+:::
+
+## Section 6.1 Examples
+
+:::{.callout-tip appearance='default' icon="false"}
+# Example 1
+
+:::: {.panel-tabset}
+# Question
+
+Consider the random variable $X$ where $X =$ number of stars given by a randomly selected book reviewer. The probability distribution of the number of stars is shown below. Estimate the probability that a randomly selected reviewer gave a given book a three-star rating.
+
+```{r}
+#| echo: false
+#| message: false
+
+df_61_1 <- tibble(
+  stars = 1:5,
+  probability = c(0.02, 0.03, 0.11, 0.23, 0.62)
+)
+
+df_61_1 |> 
+  ggplot(aes(stars, probability)) +
+  geom_segment(
+    aes(
+      x = stars,
+      xend = stars,
+      y = 0,
+      yend = probability
+    )
+  ) +
+  geom_point(
+    size = 5,
+    color = '#A90533',
+    fill = '#DC6F86',
+    shape = 21,
+    stroke = 2
+  ) +
+  ylim(0, 0.8) +
+  xlim(0.5, 5.5) +
+  labs(
+    x = 'Number of Stars',
+    y = 'Probability'
+  ) +
+  geom_label(
+    label = df_61_1$probability,
+    vjust = -0.75
+  ) +
+  theme_classic() 
+```
+
+# Answer
+
+[The probability value for three-star rating is 0.11.]{style='color:red'}
+::::
+:::
+
+::: {.callout-tip appearance="default" icon='false'}
+# Example 2
+
+:::: {.panel-tabset}
+# Question
+
+When an _unfair coin_ is tossed, the probability that it lands on heads is 80%, and the probability that it lands on tails is 20%. Let $H$ to mean heads and $T$ tails.
+
+a. List all possible outcomes when flipping two unfair coins.
+b. Are the coin tosses independent of one another? Why?
+c. Complete the table below.
+
+|             | $P(HH)$ | $P(HT)$ | $P(TH)$ | $P(TT)$ | **Total** |
+|-------------|-------|-------|-------|-------|-------|
+| **Probability** |       |       |       |       |       |
+
+d. Let $X =$ number of coins that land on heads out of two tosses, complete the following probability distribution table.
+
+| $X$    | **0** | **1** | **2** | **Total** |
+|------|---|---|---|-------|
+| $P(X)$ |   |   |   |       |
+
+# Answer
+
+[a. There are 4 distinct outcomes you can get from flipping 2 coins.
+$$
+  \{ HH, HT, TH, HH \}
+$$
+]{style='color:red'}
+[b. The coin tosses are independent of each other, because the outcome of a toss does not depend on the outcome of the previous toss.]{style='color:red'}<br>
+[c. We need to first calculate the following probabilities. Assuming that the coin tosses are independent events. Then]{style='color:red'}
+[
+$$
+\begin{align}
+  P(HH) &= P(H) \cdot P(H) = 0.8 \cdot 0.8 = 0.64\\
+  P(HT) &= P(H) \cdot P(T) = 0.8 \cdot 0.2 = 0.16\\
+  P(TH) &= P(T) \cdot P(H) = 0.2 \cdot 0.8 = 0.16\\
+  P(TT) &= P(T) \cdot P(T) = 0.2 \cdot 0.2 = 0.04
+\end{align}
+$$
+]{style='color:red'}
+[Finally, adding these probability together, we have
+$$
+  P(HH) + P(HT) + P(TH) + P(TT) = 0.64 + 0.16 + 0.16 + 0.04 = 1
+$$
+]{style='color:red'}<br>
+[d. First observe that
+$$
+\begin{align}
+  X &= \text{event with 0 heads} = \{ TT \},\\
+  X &= \text{event with 1 heads} = \{ HT, TH \},\\
+  X &= \text{event with 2 heads} = \{ HH \}
+\end{align}
+$$
+]{style='color:red'}
+[Therefore
+$$
+\begin{align}
+  P(X = 0) &= 0.04,\\
+  P(X = 1) &= P(HT) + P(TH) = 0.16 + 0.16 = 0.32,\\
+  P(X = 2) &= P(HH) = 0.64
+\end{align}
+$$
+]{style='color:red'}
+[And the sum is]{style='color:red'}
+[
+$$
+  P(X = 0) + P(X = 1) + P(X = 2) = 0.04 + 0.32 + 0.64 = 1.
+$$
+]{style='color:red'}
+::::
+:::
+
+::: {.callout-tip appearance="default" icon='false'}
+# Example 3
+:::: {.panel-tabset}
+# Question
+
+This probability density curve shows the probability of wait times before service at a coffee shop. The shaded area represents the probability of a wait time between 0 and 2 minutes.
+
+a. What is the minimum wait time at the coffee shop?
+b. What is the maximum wait time at the coffee shop?
+c. Based on the plot, approximately what is the probability that someone will wait between 0 and 2 minutes?
+
+```{r}
+#| echo: false
+#| message: false
+
+alpha <- 2.5
+beta <- 3.5
+
+x <- seq(0, 5, length.out = 201)
+
+# Density: scaled Beta(alpha, beta) on [0,5]
+density <- dbeta(x / 5, shape1 = alpha, shape2 = beta) / 5
+
+curve_tbl <- tibble(
+  waiting_time_min = x,
+  density = density
+)
+
+# Compute y-value on the curve at x = 2
+y_at_2 <- dbeta(2 / 5, shape1 = alpha, shape2 = beta) / 5
+
+# Plot
+ggplot(curve_tbl, aes(x = waiting_time_min, y = density)) +
+  geom_line(color = "blue", linewidth = 1.2) +
+  geom_segment(
+    aes(x = 2, xend = 2, y = 0, yend = y_at_2),
+    inherit.aes = FALSE,
+    color = "#A90533",
+    linewidth = 1.2
+  ) +
+  labs(
+    x = "Waiting Time (minutes)",
+    y = "Density"
+  ) +
+  theme_classic()
+```
+
+# Answer
+
+[a. The minimum wait time is 0 minutes.<br>
+ b. The maximum wait time is 5 minutes.<br>
+ c. The probability that someone will wait between 0 and 2 minutes is approximately 50%.]{style='color:red'}
+::::
+:::
+
+::: {.callout-tip appearance="default" icon='false'}
+# Example 4 
+:::: {.panel-tabset}
+# Question
+
+A bus arrives at a certain stop every 12 minutes. The graph below shows the probability distribution for the continuous random variable $X =$ wait time before the bus arrives. This is an example of a **uniform distribution**, that is, a distribution in which every possibility for the random variable $X$ is equally likely. Use this distribution to find the probability of a wait time between 4 and 10 minutes.
+
+```{r}
+#| echo: false
+
+df_ex_64 <- data.frame(
+  x = c(0, 0, 12, 12),
+  y = c(0, 1/12, 1/12, 0)
+)
+
+ggplot(df_ex_64, aes(x, y)) +
+  geom_line() +
+  geom_polygon(fill = NA, color = "blue") +
+  labs(x = "Waiting Time (minutes)", y = "Density") +
+  xlim(-1, 13) +
+  scale_y_continuous(
+    limits = c(0, 0.11),
+    breaks = c(0, 0.0833, 0.1),
+    labels = c("0.00", "0.0833", "0.10")
+  ) +
+  theme_classic()
+```
+
+# Answer
+
+[To find the probability of waiting between 4 and 10 minutes, we simply find the area of of the rectangle that is between 4 and 10. The width of the red rectangle is $10 - 4 = 6$ and its height is $0.0833$, so
+$$
+  P(4 \leqslant X \leqslant 10) = 6 \times 0.0833 = 0.4998 \approx 0.5
+$$]{style='color:red'}
+
+```{r}
+#| echo: false
+#| message: false
+
+df_ex_64_shade <- data.frame(
+  x = c(4, 4, 10, 10),
+  y = c(0, 1/12, 1/12, 0)
+)
+
+ggplot() +
+  geom_polygon(data = df_ex_64_shade, aes(x, y), fill = "red", alpha = 0.4) +
+  geom_line(data = df_ex_64, aes(x, y), color = "blue") +
+  geom_polygon(data = df_ex_64, aes(x, y), fill = NA, color = "blue") +
+  xlim(-1, 13) +
+  labs(x = "Waiting Time (minutes)", y = "Density") +
+  scale_x_continuous(
+    limits = c(-1, 13),
+    breaks = c(0, 5, 10, 12),
+    labels = c("0", "5", "10", "12")
+  ) +
+  scale_y_continuous(
+    limits = c(0, 0.11),
+    breaks = c(0, 0.0833, 0.1),
+    labels = c("0", "0.0833", "0.10")
+  ) +
+  theme_classic()
+```
+
+::::
+:::
+
+::: {.callout-tip appearance="default" icon='false'}
+# Example 5 
+:::: {.panel-tabset}
+# Question
+
+Suppose an instructor designs lessons so that the class lengths are uniformly distributed between 72.0 and 77.0 minutes. That is, any time between 72.0 min and 77.0 min is possible and all the possible values are equally likely. If we let $X$ be the random variable representing the length of that class, then the random variable $X$ has a distribution that can be graphed below.
+
+a. Is the length of the class a continuous or a discrete random variable?
+b. Can a probability distribution (a table) be created for this random variable?
+c. The probability density function for the random variable of class time is given below. What is the total area under the curve?
+d. Determine the probability that the class runs over 75.5 minutes, i.e., $P(X \geqslant 75.5)$.
+
+```{r}
+#| echo: false
+
+df_ex_65 <- data.frame(
+  x = c(72, 72, 77, 77),
+  y = c(0, 0.2, 0.2, 0)
+)
+
+ggplot(df_ex_65, aes(x, y)) +
+  geom_line() +
+  geom_polygon(fill = NA, color = "blue") +
+  labs(x = "Minutes", y = "Density") +
+  xlim(71.5, 77.5) +
+  scale_y_continuous(
+    limits = c(0, 0.22),
+    breaks = c(0, 0.2),
+    labels = c("", "0.2")
+  ) +
+  theme_minimal()
+```
+
+# Answer
+
+[a. The length of class time is a continuous variable.]{style='color:red'}<br>
+[b. Since the variable is continuous, a probability distribution table cannot be created.]{style='color:red'}<br>
+[c. The total area under the curve is the total area of the entire rectangle: 
+$$
+  \text{area} = (77 - 72) \times 0.2 = 5 \times 0.2 = 1
+$$
+]{style='color:red'}<br>
+[d. The probability $P(X \geqslant 75)$ is the area of the shaded region that is between 75 and 77:
+$$
+  P(X \geqslant 75) = (77 - 75) \times 0.2 = 2 \times 0.2 = 0.4
+$$
+]{style='color:red'}
+
+```{r}
+#| echo: false
+
+df_ex_65_shade <- data.frame(
+  x = c(75, 75, 77, 77),
+  y = c(0, 0.2, 0.2, 0)
+)
+
+ggplot() +
+  # Shaded region
+  geom_polygon(data = df_ex_65_shade, aes(x, y), fill = "red", alpha = 0.4) +
+  # Outline of uniform density
+  geom_line(data = df_ex_65, aes(x, y), color = "blue") +
+  geom_polygon(data = df_ex_65, aes(x, y), fill = NA, color = "blue") +
+  # Labels and axis
+  labs(x = "Waiting Time (minutes)", y = "Density") +
+  scale_y_continuous(
+    limits = c(0, 0.22),
+    breaks = c(0, 0.2),
+    labels = c("", "0.2")
+  ) +
+  theme_minimal()
+```
+
+::::
+:::
+
+
